@@ -1,10 +1,10 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.RegisterUserDTO;
+import com.example.demo.dto.UserResponseDTO;
 import com.example.demo.entity.User;
 import com.example.demo.service.UserService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,7 +19,12 @@ public class UserController {
     }
 
     @GetMapping("users")
-    public List<User> getAllUser(){
+    public List<UserResponseDTO> getAllUser(){
         return userService.getAllUser();
+    }
+
+    @PostMapping("users")
+    public UserResponseDTO registerUser(@RequestBody RegisterUserDTO registerUserDTO){
+        return userService.registerUser(registerUserDTO);
     }
 }
