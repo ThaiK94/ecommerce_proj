@@ -2,8 +2,8 @@ import reactLogo from "../../assets/react.svg";
 
 export const NavigationBar = () => {
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-light">
-      <div className="container-fluid">
+    <div className="container-fluid bg-light mb-5">
+      <nav className="navbar navbar-expand-sm navbar-light mx-2">
         <a href="#" className="navbar-brand mb-0 h1">
           <img
             src={reactLogo}
@@ -49,7 +49,7 @@ export const NavigationBar = () => {
             </li>
           </ul>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
