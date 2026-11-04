@@ -25,6 +25,7 @@ public class UserService {
 
         return users.stream()
                 .map(user -> new UserResponseDTO(
+                        user.getId(),
                         user.getFirstName(),
                         user.getLastName(),
                         user.getEmail()
@@ -48,6 +49,7 @@ public class UserService {
 
 
         return new UserResponseDTO(
+                saved.getId(),
                 saved.getFirstName(),
                 saved.getLastName(),
                 saved.getEmail()

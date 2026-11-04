@@ -1,4 +1,4 @@
 package com.example.demo.dto;
 
-public record UserResponseDTO(String firstName, String lastName, String email) {
+public record UserResponseDTO(Long id, String firstName, String lastName, String email) {
 }
