@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.dto.RegisterUserDTO;
 import com.example.demo.dto.UserResponseDTO;
+import com.example.demo.entity.Cart;
 import com.example.demo.entity.Role;
 import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
@@ -34,6 +35,7 @@ public class UserService {
 
     public UserResponseDTO registerUser(RegisterUserDTO registerUserDTO){
         User user = new User();
+        Cart cart = new Cart();
 
         user.setFirstName(registerUserDTO.firstName());
         user.setLastName(registerUserDTO.lastName());
@@ -41,7 +43,9 @@ public class UserService {
         user.setPassword(registerUserDTO.password());
         user.setRole(Role.USER);
 
+        user.setCart(cart);
         User saved = userRepository.save(user);
+
 
         return new UserResponseDTO(
                 saved.getFirstName(),
