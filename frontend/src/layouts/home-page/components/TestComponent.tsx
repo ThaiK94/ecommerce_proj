@@ -12,7 +12,7 @@ export const TestComponent = () => {
         throw new Error("Failed to fetch products");
       }
 
-      const data = await response.json();
+      const data: UserModel[] = await response.json();
 
       setUsers(data);
     } catch (error) {
@@ -25,7 +25,11 @@ export const TestComponent = () => {
       <div className="container-fluid">
         <div className="container-fluid">
           <span>To get list of users, click here!</span>
-          <button onClick={getUser}></button>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={getUser}
+          >CLICK HERE!</button>
         </div>
         <div className="d-flex flex-wrap gap-3 mt-3">
           {users.map((user) => (
