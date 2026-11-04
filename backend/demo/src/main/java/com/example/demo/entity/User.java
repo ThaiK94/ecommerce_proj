@@ -25,6 +25,9 @@ public class User {
     @Column(name = "role", nullable = false)
     private Role role = Role.USER;
 
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Cart cart;
+
     public User(){}
 
     public User(String firstName, String lastName, String email, Role role, String password) {
@@ -33,6 +36,18 @@ public class User {
         this.email = email;
         this.role = role;
         this.password = password;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+
+        if (cart != null) {
+            cart.setUser(this);
+        }
     }
 
     public Long getId() {
