@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { UserModel } from "../../../models/UserModel";
+import type { UserModel } from "../../../../models/UserModel";
 
 export const TestComponent = () => {
   const [users, setUsers] = useState<UserModel[]>([]);
