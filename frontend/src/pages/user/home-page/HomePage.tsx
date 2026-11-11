@@ -1,4 +1,4 @@
-import { NavigationBar } from "../navigation-bars/NavigationBar";
+import { NavigationBar } from "../../common/NavigationBar";
 import { TestComponent } from "./components/TestComponent";
 
 export const Homepage = () => {
